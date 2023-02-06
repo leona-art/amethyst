@@ -6,9 +6,9 @@ WORKDIR /usr/src/app
 
 COPY ./app/package.json ./app/package-lock.json ./
 
-RUN npm install
+RUN yarn 
 
 EXPOSE 5173
 EXPOSE 24678
 
-CMD ["npm","run","dev"]
+CMD ["yarn","dev","--host","0.0.0.0"]
