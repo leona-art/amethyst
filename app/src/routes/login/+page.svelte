@@ -22,7 +22,8 @@
 </div>
 
 <style>
-  button {
-    background-color: blue;
+  form {
+    margin-left: auto;
+    margin-right: auto;
   }
 </style>
