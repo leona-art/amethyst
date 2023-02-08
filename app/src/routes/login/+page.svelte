@@ -1,16 +1,8 @@
 <script>
   import { page } from "$app/stores";
-  import { onMount } from "svelte";
   import Account from "../Account.svelte";
   import Auth from "../Auth.svelte";
-
-  onMount(() => {});
 </script>
-
-<svelte:head>
-  <title>Supabase + SvelteKit</title>
-  <meta name="description" content="SvelteKit using supabase-js v2" />
-</svelte:head>
 
 {#if !$page.data.session}
   <Auth />
