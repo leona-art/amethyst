@@ -18,11 +18,17 @@
       loading = false;
     }
   };
+  async function signInWithGoogle() {
+    const { data, error } = await supabase.auth.signInWithOAuth({
+      provider: "google",
+    });
+  }
 </script>
 
 <form class="row flex-center flex" on:submit|preventDefault={handleLogin}>
   <div class="col-6 form-widget">
     <h1 class="header">Welcome to Amethyst</h1>
+    <button on:click={signInWithGoogle}>Sign in with google</button>
     <p class="description">
       マジックリンクから以下のメールアドレスでサインインしてください。
     </p>
