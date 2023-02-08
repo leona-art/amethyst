@@ -1,29 +1,19 @@
-<script lang="ts">
-  export let data: {
-    user: string;
-    pass: string;
-  };
+<script>
+  import { page } from "$app/stores";
+  import { onMount } from "svelte";
+  import Account from "../Account.svelte";
+  import Auth from "../Auth.svelte";
+
+  onMount(() => {});
 </script>
 
-<div>
-  <form method="post">
-    <label>
-      user
-      <input name="user" />
-    </label>
-    <label>
-      password
-      <input type="password" name="password" />
-    </label>
-    <button>login</button>
-  </form>
-  <p>{data.user}</p>
-  <p>{data.pass}</p>
-</div>
+<svelte:head>
+  <title>Supabase + SvelteKit</title>
+  <meta name="description" content="SvelteKit using supabase-js v2" />
+</svelte:head>
 
-<style>
-  form {
-    margin-left: auto;
-    margin-right: auto;
-  }
-</style>
+{#if !$page.data.session}
+  <Auth />
+{:else}
+  <Account session={$page.data.session} />
+{/if}

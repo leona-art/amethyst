@@ -1,16 +1,15 @@
 <script>
+  import { goto } from "$app/navigation";
   import { page } from "$app/stores";
+  import { onMount } from "svelte";
   import Account from "./Account.svelte";
   import Auth from "./Auth.svelte";
+
+  // onMount(() => {
+  //   if (!$page.data.session) {
+  //     goto("/login");
+  //   }
+  // });
 </script>
 
-<svelte:head>
-  <title>Supabase + SvelteKit</title>
-  <meta name="description" content="SvelteKit using supabase-js v2" />
-</svelte:head>
-
-{#if !$page.data.session}
-  <Auth />
-{:else}
-  <Account session={$page.data.session} />
-{/if}
+<h1>Home</h1>
